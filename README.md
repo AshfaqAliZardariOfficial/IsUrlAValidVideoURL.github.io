@@ -1,4 +1,5 @@
 # AshfaqAliZardariOfficial.github.io
+A native JavaScript code to know is Link/URL a video Link/URL.
 
 
 ## Method
