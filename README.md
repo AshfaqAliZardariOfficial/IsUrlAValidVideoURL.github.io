@@ -1,26 +1,36 @@
-# AshfaqAliZardariOfficial.github.io
-A native JavaScript code to know is Link/URL a video Link/URL.
+# [IsUrlAValidVideoURL](IsUrlAValidVideoURL.github.io) 
+by ***Ashfaq Ali Zardari***  
+A native JavaScript programming code to know is Link/URL a valid video Link/URL that can be played.
 
 
 ## Method
 ```
 <script type="text/javascript">
 
-        // Is a video link method.
+       // Is a video link method.
         const isVideoLinkLink = (URL) => new Promise(resolve => {
             var v = document.createElement("VIDEO");
             try {
                 v.onloadedmetadata = () => {
-                    v.videoWidth > 0 && v.videoHeight > 0 ? resolve(true) : resolve(false);
+                    resolve(v.videoWidth > 0 && v.videoHeight > 0);
                 }
-                v.error = () => {
+                v.onerror = () => {
                     resolve(false);
                 }
             } catch (error) {
                 resolve(false);
             }
-            v.src = URL;
-
+            var isURL = new RegExp('^(https?:\\/\\/)?' + // protocol
+                '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+                '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+                '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+                '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+                '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
+            if (!!isURL.test(URL)) {
+                v.src = URL;
+            } else {
+                resolve(false);
+            }
         })
 </script>
 ```
@@ -39,6 +49,9 @@ A native JavaScript code to know is Link/URL a video Link/URL.
             , "http://techslides.com/demos/sample-videos/small.3gp"
             , "https://drive.google.com/uc?export=download&id=1MeEnp4I32vGmDfZbBTNRDa0jEtk07fOr"
             , "https://filesamples.com/samples/video/3gp/sample_640x360.3gp"
+            , "https://vimeo.com/726789599"
+            , "http://www.youtube.com/watch?v=PVfJnltHIM4"
+            , "http://www.youtube.com/watch?v=bYfAyv8p91Y"
         ];
 
         // Usage.
