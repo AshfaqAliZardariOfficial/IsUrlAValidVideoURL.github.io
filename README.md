@@ -1,4 +1,4 @@
-# [IsUrlAValidVideoURL](IsUrlAValidVideoURL.github.io) 
+# [IsUrlAValidVideoURL](https://ashfaqalizardariofficial.github.io/IsUrlAValidVideoURL.github.io/) 
 by ***Ashfaq Ali Zardari***  
 A native JavaScript programming code to know is Link/URL a valid video Link/URL that can be played.
 
